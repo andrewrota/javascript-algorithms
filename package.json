@@ -13,8 +13,5 @@
   "author": "Andrew Rota",
   "license": "None",
   "readmeFilename": "README.md",
-  "gitHead": "594a7d46eab08225f72971237c156029ed62e32a",
-  "bugs": {
-    "url": "https://github.com/andrewrota/javascript-algorithms/issues"
-  }
+  "gitHead": "594a7d46eab08225f72971237c156029ed62e32a"
 }
