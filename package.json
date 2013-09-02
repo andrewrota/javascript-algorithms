@@ -1,0 +1,23 @@
+{
+  "name": "javascript-algorithms",
+  "version": "0.1.0",
+  "description": "javascript-algorithms =====================",
+  "private": true,
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewrota/javascript-algorithms.git"
+  },
+  "author": "Andrew Rota",
+  "license": "None",
+  "readmeFilename": "README.md",
+  "gitHead": "594a7d46eab08225f72971237c156029ed62e32a",
+  "bugs": {
+    "url": "https://github.com/andrewrota/javascript-algorithms/issues"
+  }
+}
