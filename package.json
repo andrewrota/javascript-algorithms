@@ -13,8 +13,10 @@
   "author": "Andrew Rota",
   "license": "None",
   "readmeFilename": "README.md",
-  "gitHead": "594a7d46eab08225f72971237c156029ed62e32a",
   "devDependencies": {
-    "mocha": "~1.12.1"
+    "grunt": "0.4.x",
+    "grunt-contrib-jshint": "0.5.x",
+    "grunt-mocha-test": "0.6.x",
+    "chai": "1.7.2"
   }
 }

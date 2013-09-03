@@ -1,0 +1,7 @@
+{
+    "camelcase": true,
+    "maxerr": 50,
+    "eqeqeq": true,
+    "forin": true,
+    "indent": 2
+}
