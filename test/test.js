@@ -7,7 +7,7 @@ describe('Dynamic Connectivity', function(){
       quickFind.union(4,3);
     });
     it('should find connected items', function(){
-      var quickFind = new QuickFind(9);
+      var quickFind = new QuickFind(10);
       quickFind.union(4,3);
       quickFind.union(3,8);
       quickFind.union(6,5);
@@ -17,6 +17,7 @@ describe('Dynamic Connectivity', function(){
       assert.equal(quickFind.connected(3,4), true);
       assert.equal(quickFind.connected(0,7), false);
       assert.equal(quickFind.connected(4,8), true);
+      assert.equal(quickFind.connected(3,9), true);
     });
   });
 });
