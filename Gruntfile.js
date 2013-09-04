@@ -3,7 +3,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js']
+      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js']
     },
     mochaTest: {
       test: {
@@ -18,6 +18,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.registerTask('test', ['jshint', 'mochaTest']);
-
   grunt.registerTask('default', ['test']);
 };
