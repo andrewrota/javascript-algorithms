@@ -2,10 +2,6 @@ var assert = require('assert');
 var QuickFind = require('../src/QuickFind');
 describe('Dynamic Connectivity', function(){
   describe('Quickfind', function(){
-    it('should unite items', function(){
-      var quickFind = new QuickFind(5);
-      quickFind.union(4,3);
-    });
     it('should find connected items', function(){
       var quickFind = new QuickFind(10);
       quickFind.union(4,3);
