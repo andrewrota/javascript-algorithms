@@ -32,10 +32,12 @@ module.exports = function(count) {
     }
     var pId = _ids[p];
     var qId = _ids[q];
-    for(var i = 0; i<_ids.length; i++) {
+    var i = _ids.length;
+    while(i) {
       if(_ids[i] === pId) {
         _ids[i] = qId;
       }
+      i--;
     }
   };
 
