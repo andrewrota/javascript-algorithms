@@ -1,5 +1,5 @@
 /**
- * QuickFind Union-FInd algorithm for
+ * QuickFind Union-Find algorithm for
  * dynamic connectivity problem
  *
  * @class QuickFind
