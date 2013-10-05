@@ -22,3 +22,10 @@ describe('Dynamic Connectivity', function(){
     });
   });
 });
+describe('Basic Data Structures', function(){
+  describe('Bag', function(){
+    it('should be a function', function() {
+      assert.isFunction(Bag);
+    });
+  });
+});
