@@ -152,6 +152,7 @@ describe('Basic Data Structures', function(){
       assert.include(queue.items, itemToEnqueue);
       var itemDequeued = queue.dequeue();
       assert.deepEqual(itemDequeued, itemToEnqueue);
+      assert.notInclude(queue.items, itemDequeued);
     });
   });
 });
