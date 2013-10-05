@@ -61,7 +61,7 @@ describe('Basic Data Structures', function(){
     });
     it('should be able to check if bag is empty', function() {
       var bag = new Bag();
-      assert.ok(isEmpty());
+      assert.ok(bag.isEmpty());
     });
   });
 });
