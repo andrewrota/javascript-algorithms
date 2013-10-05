@@ -28,10 +28,10 @@ module.exports = function() {
   };
 
   /**
-   * Removes the last item added to the queue
+   * Removes the next item in FIFO order
    *
    * @method dequeue
-   * @return {Object} item Returns the last item add
+   * @return {Object} item Returns the item in FIFO order
    */
   var dequeue = function() {
     var dequeuedItem = _items[0];
