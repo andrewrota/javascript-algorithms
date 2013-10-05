@@ -8,6 +8,16 @@
 module.exports = function() {
   
   /**
+   * The array of items in the bag
+   *
+   * @private
+   * @property _items
+   * @type {Array}
+   */
+
+   var _items = [];
+
+  /**
    * Adds an item to the bag
    *
    * @method add
@@ -40,7 +50,8 @@ module.exports = function() {
   return {
     size: size,
     add: add,
-    isEmpty: isEmpty
+    isEmpty: isEmpty,
+    items: _items
   };
 
 };
