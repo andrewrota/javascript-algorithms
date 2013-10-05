@@ -39,5 +39,9 @@ describe('Basic Data Structures', function(){
       var bag = new Bag();
       assert.isFunction(bag.size);
     });
+    it('should have internal array defined', function() {
+      var bag = new Bag();
+      assert.isDefined(bag._array);
+    });
   });
 });
