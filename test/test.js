@@ -43,6 +43,11 @@ describe('Basic Data Structures', function(){
       var bag = new Bag();
       assert.isArray(bag.items);
     });
-   
+    it('should be able to add item to bag', function() {
+      var bag = new Bag();
+      var itemToAdd = 'Test';
+      bag.add(itemToAdd);
+      assert.include(bag.items, itemToAdd);
+    });
   });
 });
