@@ -1,5 +1,6 @@
 /**
- * Queue data structure
+ * Queue data structure:
+ * first in, first out (FIFO)
  *
  * @class Queue
  * @constructor
