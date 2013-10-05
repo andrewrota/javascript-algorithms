@@ -34,7 +34,7 @@ module.exports = function() {
    * @return {Boolean} Returns true if the bag is empty
    */
   var isEmpty = function() {
-      
+      return !_items.length;
   };
 
   /**
