@@ -145,5 +145,13 @@ describe('Basic Data Structures', function(){
       queue.enqueue(secondItemToEnqueue);
       assert.equal(queue.size(), 2);
     });
+    it('should be able to dequeue an item', function() {
+      var queue = new Queue();
+      var itemToEnqueue = 'Test';
+      queue.enqueue(itemToEnqueue);
+      assert.include(queue.items, itemToEnqueue);
+      var itemDequeued = queue.dequeue();
+      assert.deepEqual(itemDequeued, itemToEnqueue);
+    });
   });
 });
