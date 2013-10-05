@@ -24,7 +24,7 @@ module.exports = function() {
    * @param {Object} item Adds an item to the bag
    */
   var add = function(item) {
-      
+      _items.push(item);
   };
 
   /**
