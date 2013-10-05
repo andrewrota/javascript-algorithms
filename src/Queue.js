@@ -44,7 +44,7 @@ module.exports = function() {
    * @return {Boolean} Returns true if the queue is empty
    */
   var isEmpty = function() {
-      
+      return !_items.length;
   };
 
   /**
