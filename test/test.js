@@ -154,5 +154,27 @@ describe('Basic Data Structures', function(){
       assert.deepEqual(itemDequeued, itemToEnqueue);
       assert.notInclude(queue.items, itemDequeued);
     });
+    it('should be able to dequeue two items in FIFO order', function() {
+      var queue = new Queue();
+      var firstItemToEnqueue = 'Test';
+      var secondItemToEnqueue = 123;
+      queue.enqueue(firstItemToEnqueue);
+      queue.enqueue(secondItemToEnqueue);
+      assert.equal(queue.size(), 2);
+      assert.include(queue.items, firstItemToEnqueue);
+      assert.include(queue.items, secondItemToEnqueue);
+      
+      var itemDequeued = queue.dequeue();
+      assert.deepEqual(itemDequeued, firstItemToEnqueue);
+      assert.notInclude(queue.items, firstItemToEnqueue);
+      assert.include(queue.items, secondItemToEnqueue);
+      assert.equal(queue.size(), 1);
+
+      itemDequeued = queue.dequeue();
+      assert.deepEqual(itemDequeued, secondItemToEnqueue);
+      assert.notInclude(queue.items, secondItemToEnqueue);
+      assert.notInclude(queue.items, firstItemToEnqueue);
+      assert.isTrue(queue.isEmpty());
+    });
   });
 });
