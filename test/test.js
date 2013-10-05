@@ -27,5 +27,17 @@ describe('Basic Data Structures', function(){
     it('should be a function', function() {
       assert.isFunction(Bag);
     });
+    it('should have add method', function() {
+      var bag = new Bag();
+      assert.isFunction(bag.add());
+    });
+    it('should have isEmpty method', function() {
+      var bag = new Bag();
+      assert.isFunction(bag.isEmpty());
+    });
+    it('should have size method', function() {
+      var bag = new Bag();
+      assert.isFunction(bag.size());
+    });
   });
 });
