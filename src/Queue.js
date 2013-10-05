@@ -54,6 +54,7 @@ module.exports = function() {
    * @return {Number} Returns number of items in the queue
    */
   var size = function() {
+    return _items.length;
   };
 
   return {
