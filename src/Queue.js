@@ -24,7 +24,7 @@ module.exports = function() {
    * @param {Object} item Adds an item to the queue
    */
   var enqueue = function(item) {
-
+    _items.push(item);
   };
 
   /**
