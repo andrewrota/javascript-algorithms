@@ -123,5 +123,15 @@ describe('Basic Data Structures', function(){
       assert.include(queue.items, firstItemToEnqueue);
       assert.include(queue.items, secondItemToEnqueue);
     });
+    it('should be able to check if queue is empty', function() {
+      var queue = new Queue();
+      assert.isTrue(queue.isEmpty());
+    });
+    it('should be able to check if queue is not empty', function() {
+      var queue = new Queue();
+      var itemToEnqueue = 'Test';
+      queue.enqueue(itemToEnqueue);
+      assert.isFalse(queue.isEmpty());
+    });
   });
 });
