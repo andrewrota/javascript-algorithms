@@ -49,5 +49,15 @@ describe('Basic Data Structures', function(){
       bag.add(itemToAdd);
       assert.include(bag.items, itemToAdd);
     });
+    it('should be able to add two items to bag', function() {
+      var bag = new Bag();
+      var firstItemToAdd = 'Test';
+      var secondItemToAdd = 123;
+      bag.add(firstItemToAdd);
+      assert.include(bag.items, firstItemToAdd);
+      bag.add(secondItemToAdd);
+      assert.include(bag.items, firstItemToAdd);
+      assert.include(bag.items, secondItemToAdd);
+    });
   });
 });
