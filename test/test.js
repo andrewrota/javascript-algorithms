@@ -107,5 +107,21 @@ describe('Basic Data Structures', function(){
       var queue = new Queue();
       assert.isArray(queue.items);
     });
+    it('should be able to enqueue item', function() {
+      var queue = new Queue();
+      var itemToEnqueue = 'Test';
+      queue.enqueue(itemToEnqueue);
+      assert.include(queue.items, itemToEnqueue);
+    });
+    it('should be able to enqueue two items', function() {
+      var queue = new Queue();
+      var firstItemToEnqueue = 'Test';
+      var secondItemToEnqueue = 123;
+      queue.enqueue(firstItemToEnqueue);
+      assert.include(queue.items, firstItemToEnqueue);
+      queue.enqueue(secondItemToEnqueue);
+      assert.include(queue.items, firstItemToEnqueue);
+      assert.include(queue.items, secondItemToEnqueue);
+    });
   });
 });
