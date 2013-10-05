@@ -69,5 +69,17 @@ describe('Basic Data Structures', function(){
       bag.add(itemToAdd);
       assert.isFalse(bag.isEmpty());
     });
+    it('should be able to check size of bag when empty', function() {
+      var bag = new Bag();
+      assert.equal(bag.size(), 0);
+    });
+    it('should be able to check size of bag when it has two items', function() {
+      var bag = new Bag();
+      var firstItemToAdd = 'Test';
+      var secondItemToAdd = 123;
+      bag.add(firstItemToAdd);
+      bag.add(secondItemToAdd);
+      assert.equal(bag.size(), 2);
+    });
   });
 });
