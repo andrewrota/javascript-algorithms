@@ -37,4 +37,10 @@ module.exports = function() {
       
   };
 
+  return {
+    size: size,
+    add: add,
+    isEmpty: isEmpty
+  };
+
 };
