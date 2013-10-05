@@ -34,7 +34,7 @@ module.exports = function() {
    * @return {Object} item Returns the last item add
    */
   var dequeue = function() {
-
+    return _items[0];
   };
 
   /**
