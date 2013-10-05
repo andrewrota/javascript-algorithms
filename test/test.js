@@ -2,6 +2,7 @@ var chai = require('chai');
 var assert = chai.assert;
 var QuickFind = require('../src/QuickFindCollection');
 var Bag = require('../src/Bag');
+var Queue = require('../src/Queue');
 describe('Dynamic Connectivity', function(){
   describe('Quickfind', function(){
     it('should find connected items', function(){
