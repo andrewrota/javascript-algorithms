@@ -44,7 +44,7 @@ module.exports = function() {
    * @return {Number} Returns number of items in the bag
    */
   var size = function() {
-      
+      return _items.length;
   };
 
   return {
