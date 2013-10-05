@@ -133,5 +133,17 @@ describe('Basic Data Structures', function(){
       queue.enqueue(itemToEnqueue);
       assert.isFalse(queue.isEmpty());
     });
+    it('should be able to check size of queue when empty', function() {
+      var queue = new Queue();
+      assert.equal(queue.size(), 0);
+    });
+    it('should be able to check size of queue when it has two items', function() {
+      var queue = new Queue();
+      var firstItemToEnqueue = 'Test';
+      var secondItemToEnqueue = 123;
+      queue.enqueue(firstItemToEnqueue);
+      queue.enqueue(secondItemToEnqueue);
+      assert.equal(queue.size(), 2);
+    });
   });
 });
