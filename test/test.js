@@ -82,4 +82,29 @@ describe('Basic Data Structures', function(){
       assert.equal(bag.size(), 2);
     });
   });
+  describe('Queue', function(){
+    it('should be a function', function() {
+      assert.isFunction(Queue);
+    });
+    it('should have enqueue method', function() {
+      var queue = new Queue();
+      assert.isFunction(queue.enqueue);
+    });
+    it('should have dequeue method', function() {
+      var queue = new Queue();
+      assert.isFunction(queue.dequeue);
+    });
+    it('should have isEmpty method', function() {
+      var queue = new Queue();
+      assert.isFunction(queue.isEmpty);
+    });
+    it('should have size method', function() {
+      var queue = new Queue();
+      assert.isFunction(queue.size);
+    });
+    it('should have internal array defined', function() {
+      var queue = new Queue();
+      assert.isArray(queue.items);
+    });
+  });
 });
