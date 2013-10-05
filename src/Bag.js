@@ -23,7 +23,17 @@ module.exports = function() {
    * @method isEmpty
    * @return {Boolean} Returns true if the bag is empty
    */
-  var isEmpty = function(item) {
+  var isEmpty = function() {
+      
+  };
+
+  /**
+   * Returns the number of items in the bag
+   *
+   * @method size
+   * @return {Number} Returns number of items in the bag
+   */
+  var size = function() {
       
   };
 
