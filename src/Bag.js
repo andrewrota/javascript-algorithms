@@ -6,6 +6,7 @@
  */
 
 module.exports = function() {
+  
   /**
    * Adds an item to the bag
    *
@@ -15,4 +16,15 @@ module.exports = function() {
   var add = function(item) {
       
   };
+
+  /**
+   * Checks whether the bag is empty
+   *
+   * @method isEmpty
+   * @return {Boolean} Returns true if the bag is empty
+   */
+  var isEmpty = function(item) {
+      
+  };
+
 };
