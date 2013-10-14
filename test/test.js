@@ -177,4 +177,9 @@ describe('Basic Data Structures', function(){
       assert.isTrue(queue.isEmpty());
     });
   });
+  describe('Stack', function(){
+    it('should be a function', function() {
+      assert.isFunction(Stack);
+    });
+  });
 });
