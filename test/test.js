@@ -182,5 +182,25 @@ describe('Basic Data Structures', function(){
     it('should be a function', function() {
       assert.isFunction(Stack);
     });
+    it('should have push method', function() {
+      var stack = new Stack();
+      assert.isFunction(stack.push);
+    });
+    it('should have pop method', function() {
+      var stack = new Stack();
+      assert.isFunction(stack.pop);
+    });
+    it('should have isEmpty method', function() {
+      var stack = new Stack();
+      assert.isFunction(stack.isEmpty);
+    });
+    it('should have size method', function() {
+      var stack = new Stack();
+      assert.isFunction(stack.size);
+    });
+    it('should have internal array defined', function() {
+      var stack = new Stack();
+      assert.isArray(stack.items);
+    });
   });
 });
