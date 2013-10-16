@@ -240,5 +240,36 @@ describe('Basic Data Structures', function(){
       stack.push(secondItemToPush);
       assert.equal(stack.size(), 2);
     });
+    it('should be able to pop an item', function() {
+      var stack = new Stack();
+      var itemToPush = 'Test';
+      stack.push(itemToPush);
+      assert.include(stack.items, itemToPush);
+      var itemPopped = stack.pop();
+      assert.deepEqual(itemPopped, itemToPush);
+      assert.notInclude(stack.items, itemPopped);
+    });
+    it('should be able to pop two items in LIFO order', function() {
+      var stack = new Stack();
+      var firstItemToPush = 'Test';
+      var secondItemToPush = 123;
+      stack.enqueue(firstItemToPush);
+      stack.enqueue(secondItemToPush);
+      assert.equal(stack.size(), 2);
+      assert.include(stack.items, firstItemToPush);
+      assert.include(stack.items, secondItemToPush);
+      
+      var itemPopped = stack.pop();
+      assert.deepEqual(itemPopped, firstItemToPush);
+      assert.notInclude(stack.items, firstItemToPush);
+      assert.include(stack.items, secondItemToPush);
+      assert.equal(stack.size(), 1);
+
+      itemPopped = stack.pop();
+      assert.deepEqual(itemPopped, secondItemToPush);
+      assert.notInclude(stack.items, secondItemToPush);
+      assert.notInclude(stack.items, firstItemToPush);
+      assert.isTrue(stack.isEmpty());
+    });
   });
 });
