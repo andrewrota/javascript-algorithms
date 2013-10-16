@@ -40,7 +40,9 @@ module.exports = function() {
    * @method isEmpty
    * @return {Boolean} Returns true if the stack is empty
    */
-  var isEmpty = function() {};
+  var isEmpty = function() {
+    return !_items.length;
+  };
 
   /**
    * Returns the number of items in the stack
