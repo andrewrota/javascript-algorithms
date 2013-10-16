@@ -232,5 +232,13 @@ describe('Basic Data Structures', function(){
       var stack = new Stack();
       assert.equal(stack.size(), 0);
     });
+    it('should be able to check size of stack when it has two items', function() {
+      var stack = new Stack();
+      var firstItemToPush = 'Test';
+      var secondItemToPush = 123;
+      stack.push(firstItemToPush);
+      stack.push(secondItemToPush);
+      assert.equal(stack.size(), 2);
+    });
   });
 });
