@@ -202,9 +202,31 @@ describe('Basic Data Structures', function(){
       var stack = new Stack();
       assert.isArray(stack.items);
     });
+    it('should be able to push item', function() {
+      var stack = new Stack();
+      var itemTopush = 'Test';
+      stack.push(itemToPush);
+      assert.include(stack.items, itemToPush);
+    });
+    it('should be able to push two items', function() {
+      var stack = new Stack();
+      var firstItemToPush = 'Test';
+      var secondItemToPush = 123;
+      stack.push(firstItemToPush);
+      assert.include(stack.items, firstItemToPush);
+      stack.push(secondItemToPush);
+      assert.include(stack.items, firstItemToPush);
+      assert.include(stack.items, secondItemToPush);
+    });
     it('should be able to check if stack is empty', function() {
       var stack = new Stack();
       assert.isTrue(stack.isEmpty());
+    });
+    it('should be able to check if stack is not empty', function() {
+      var stack = new Stack();
+      var itemToPush = 'Test';
+      stack.push(itemToPush);
+      assert.isFalse(stack.isEmpty());
     });
     it('should be able to check size of stack when empty', function() {
       var stack = new Stack();
