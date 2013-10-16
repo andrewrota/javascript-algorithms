@@ -202,5 +202,9 @@ describe('Basic Data Structures', function(){
       var stack = new Stack();
       assert.isArray(stack.items);
     });
+    it('should be able to check if stack is empty', function() {
+      var stack = new Stack();
+      assert.isTrue(stack.isEmpty());
+    });
   });
 });
