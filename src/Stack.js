@@ -50,7 +50,9 @@ module.exports = function() {
    * @method size
    * @return {Number} Returns number of items in the stack
    */
-  var size = function() {};
+  var size = function() {
+    return _items.length;
+  };
 
   return {
     push: push,
