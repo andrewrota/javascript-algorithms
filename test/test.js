@@ -204,7 +204,7 @@ describe('Basic Data Structures', function(){
     });
     it('should be able to push item', function() {
       var stack = new Stack();
-      var itemTopush = 'Test';
+      var itemToPush = 'Test';
       stack.push(itemToPush);
       assert.include(stack.items, itemToPush);
     });

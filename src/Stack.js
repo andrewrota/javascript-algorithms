@@ -24,13 +24,16 @@ module.exports = function() {
    * @method push
    * @param {Object} item Adds an item to the stack
    */
-  var push = function(item) {};
+  var push = function(item) {
+    _items.push(item);
+  };
 
   /**
-   * Adds an item to the stack
+   * Removes an item from the stack
    *
    * @method pop
    * @param {Object} item Removes an item from the stack
+   * @return {Object} item Returns the item in LIFO order
    */
   var pop = function() {};
 
