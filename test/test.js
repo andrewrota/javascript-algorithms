@@ -260,16 +260,18 @@ describe('Basic Data Structures', function(){
       assert.include(stack.items, secondItemToPush);
       
       var itemPopped = stack.pop();
-      assert.deepEqual(itemPopped, firstItemToPush);
-      assert.notInclude(stack.items, firstItemToPush);
-      assert.include(stack.items, secondItemToPush);
+      assert.deepEqual(itemPopped, secondItemToPush);
+      assert.notInclude(stack.items, secondItemToPush);
+      assert.include(stack.items, firstItemToPush); 
       assert.equal(stack.size(), 1);
 
       itemPopped = stack.pop();
-      assert.deepEqual(itemPopped, secondItemToPush);
+      assert.deepEqual(itemPopped, firstItemToPush);
       assert.notInclude(stack.items, secondItemToPush);
       assert.notInclude(stack.items, firstItemToPush);
       assert.isTrue(stack.isEmpty());
+
+      
     });
   });
 });
