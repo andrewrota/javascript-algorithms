@@ -253,8 +253,8 @@ describe('Basic Data Structures', function(){
       var stack = new Stack();
       var firstItemToPush = 'Test';
       var secondItemToPush = 123;
-      stack.enqueue(firstItemToPush);
-      stack.enqueue(secondItemToPush);
+      stack.push(firstItemToPush);
+      stack.push(secondItemToPush);
       assert.equal(stack.size(), 2);
       assert.include(stack.items, firstItemToPush);
       assert.include(stack.items, secondItemToPush);
@@ -270,7 +270,6 @@ describe('Basic Data Structures', function(){
       assert.notInclude(stack.items, secondItemToPush);
       assert.notInclude(stack.items, firstItemToPush);
       assert.isTrue(stack.isEmpty());
-
       
     });
   });
