@@ -35,7 +35,11 @@ module.exports = function() {
    * @param {Object} item Removes an item from the stack
    * @return {Object} item Returns the item in LIFO order
    */
-  var pop = function() {};
+  var pop = function() {
+    var lastItem = _items[_items.length-1];
+    _items.splice(_items.length-1, 1);
+    return lastItem;
+  };
 
   /**
    * Checks whether the stack is empty
