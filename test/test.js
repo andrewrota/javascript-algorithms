@@ -4,6 +4,8 @@ var QuickFind = require('../src/QuickFindCollection');
 var Bag = require('../src/Bag');
 var Queue = require('../src/Queue');
 var Stack = require('../src/Stack');
+var isSorted = require('../src/isSorted');
+
 describe('Dynamic Connectivity', function(){
   describe('Quickfind', function(){
     it('should find connected items', function(){
@@ -273,4 +275,25 @@ describe('Basic Data Structures', function(){
       
     });
   });
+});
+describe('Utility Functions', function() {
+    describe('isSorted Function', function(){
+      it('should check if numerical arrays are sorted', function() {
+        assert.equal(isSorted([1,2,2,3]), true);
+        assert.equal(isSorted([-5, 102, 30000.1, 50102]), true);
+      });
+      it('should check if unsorted numerical arrays are unsorted', function() {
+          assert.equal(isSorted([1,4,2,3]), false);
+          assert.equal(isSorted([-5, 102, 30000.1, -100000, 50102]), false);
+      });
+      it('should return single number arrays as sorted', function() {
+          assert.equal(isSorted([1]), true);
+          assert.equal(isSorted([0]), true);
+      });
+      it('should check if object arrays are sorted by key', function() {
+          assert.equal(isSorted([{name: 'John', age: 19}, {name: 'Joe', age: 25}, {name: 'Susan', age: 36}], 'age'), true);
+          assert.equal(isSorted([{name: 'John', age: 19}, {name: 'Joe', age: 25}, {name: 'Susan', age: 36}], 'name'), false);
+          assert.equal(isSorted([{name: 'Mary', age: 22}], 'age'), true);
+      });
+    });
 });
