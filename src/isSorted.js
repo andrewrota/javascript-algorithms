@@ -4,7 +4,7 @@
  * key parameter can compare values of a key in an array
  * of objects.
  *
- * @method isSorted
+ * @class isSorted
  * @param {Array} arr The array to check
  * @param {String} key The key to sort by values in objects in the array
  * @return {Boolean} Returns whether the array is sorted
