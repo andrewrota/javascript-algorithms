@@ -287,6 +287,10 @@ describe('Elementary Sorts', function() {
             assert.deepEqual(selectionSort([1,3,4]), [1,3,4]);
             assert.ok(util.isSorted(selectionSort([1,3,4])));
         });
+        it('should sort object arrays by key', function() {
+           assert.deepEqual(selectionSort([{name: 'Susan', age: 36}, {name: 'Joe', age: 25}, {name: 'John', age: 19}], 'age'), [{name: 'John', age: 19}, {name: 'Joe', age: 25}, {name: 'Susan', age: 36}]);
+            assert.ok(util.isSorted(selectionSort([{name: 'Susan', age: 36}, {name: 'Joe', age: 25}, {name: 'John', age: 19}], 'age'), 'age'));
+        });
     });
 });
 describe('Utility Functions', function() {
