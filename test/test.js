@@ -279,6 +279,7 @@ describe('Basic Data Structures', function(){
 });
 describe('Elementary Sorts', function() {
     describe('Selection Sort', function() {
+        // @todo Add several generic sorting tests which can be reused
         it('should sort a numerical array', function() {
             assert.deepEqual(selectionSort([1,4,2,3]), [1,2,3,4]);
             assert.ok(util.isSorted(selectionSort([1,4,2,3])));
