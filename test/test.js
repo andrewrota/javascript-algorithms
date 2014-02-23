@@ -4,7 +4,8 @@ var QuickFind = require('../src/QuickFindCollection');
 var Bag = require('../src/Bag');
 var Queue = require('../src/Queue');
 var Stack = require('../src/Stack');
-var isSorted = require('../src/isSorted');
+var util = require('../src/util');
+var selectionSort = require('../src/selectionSort');
 
 describe('Dynamic Connectivity', function(){
   describe('Quickfind', function(){
@@ -166,7 +167,7 @@ describe('Basic Data Structures', function(){
       assert.equal(queue.size(), 2);
       assert.include(queue.items, firstItemToEnqueue);
       assert.include(queue.items, secondItemToEnqueue);
-      
+
       var itemDequeued = queue.dequeue();
       assert.deepEqual(itemDequeued, firstItemToEnqueue);
       assert.notInclude(queue.items, firstItemToEnqueue);
@@ -260,11 +261,11 @@ describe('Basic Data Structures', function(){
       assert.equal(stack.size(), 2);
       assert.include(stack.items, firstItemToPush);
       assert.include(stack.items, secondItemToPush);
-      
+
       var itemPopped = stack.pop();
       assert.deepEqual(itemPopped, secondItemToPush);
       assert.notInclude(stack.items, secondItemToPush);
-      assert.include(stack.items, firstItemToPush); 
+      assert.include(stack.items, firstItemToPush);
       assert.equal(stack.size(), 1);
 
       itemPopped = stack.pop();
@@ -272,28 +273,47 @@ describe('Basic Data Structures', function(){
       assert.notInclude(stack.items, secondItemToPush);
       assert.notInclude(stack.items, firstItemToPush);
       assert.isTrue(stack.isEmpty());
-      
+
     });
   });
+});
+describe('Elementary Sorts', function() {
+    describe('Selection Sort', function() {
+        it('should sort a numerical array', function() {
+            assert.deepEqual(selectionSort([1,4,2,3]), [1,2,3,4]);
+            assert.ok(util.isSorted(selectionSort([1,4,2,3])));
+        });
+        it('should sort a numerical array that was already sorted', function() {
+            assert.deepEqual(selectionSort([1,3,4]), [1,3,4]);
+            assert.ok(util.isSorted(selectionSort([1,3,4])));
+        });
+    });
 });
 describe('Utility Functions', function() {
     describe('isSorted Function', function(){
       it('should check if numerical arrays are sorted', function() {
-        assert.equal(isSorted([1,2,2,3]), true);
-        assert.equal(isSorted([-5, 102, 30000.1, 50102]), true);
+        assert.equal(util.isSorted([1,2,2,3]), true);
+        assert.equal(util.isSorted([-5, 102, 30000.1, 50102]), true);
       });
       it('should check if unsorted numerical arrays are unsorted', function() {
-          assert.equal(isSorted([1,4,2,3]), false);
-          assert.equal(isSorted([-5, 102, 30000.1, -100000, 50102]), false);
+          assert.equal(util.isSorted([1,4,2,3]), false);
+          assert.equal(util.isSorted([-5, 102, 30000.1, -100000, 50102]), false);
       });
       it('should return single number arrays as sorted', function() {
-          assert.equal(isSorted([1]), true);
-          assert.equal(isSorted([0]), true);
+          assert.equal(util.isSorted([1]), true);
+          assert.equal(util.isSorted([0]), true);
       });
       it('should check if object arrays are sorted by key', function() {
-          assert.equal(isSorted([{name: 'John', age: 19}, {name: 'Joe', age: 25}, {name: 'Susan', age: 36}], 'age'), true);
-          assert.equal(isSorted([{name: 'John', age: 19}, {name: 'Joe', age: 25}, {name: 'Susan', age: 36}], 'name'), false);
-          assert.equal(isSorted([{name: 'Mary', age: 22}], 'age'), true);
+          assert.equal(util.isSorted([{name: 'John', age: 19}, {name: 'Joe', age: 25}, {name: 'Susan', age: 36}], 'age'), true);
+          assert.equal(util.isSorted([{name: 'John', age: 19}, {name: 'Joe', age: 25}, {name: 'Susan', age: 36}], 'name'), false);
+          assert.equal(util.isSorted([{name: 'Mary', age: 22}], 'age'), true);
       });
+    });
+    describe('swap Function', function () {
+        it('should swap two items in an arry', function () {
+            var originalArray = [0, 1, 2, 3];
+            // Swap the '3' value with the '2' value
+            assert.deepEqual(util.swap(originalArray, 3, 2), [0,1,3,2]);
+        });
     });
 });
