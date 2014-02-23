@@ -279,25 +279,28 @@ describe('Basic Data Structures', function () {
 });
 describe('Elementary Sorts', function () {
   describe('Selection Sort', function () {
-    // @todo Add several generic sorting tests which can be reused
+    var unsortedArray = [56, 93, -11, 31, -20, -30, -90, 94, 93, 98, -93, 61, 97, -85, -54, -68, 4, 94, -10, 20, -6, 78, -31, -73, 88, 55, 44, -78, -27, -97, 27, 35, -91, 73, 96, 17, -74, 58, 52, 70, 68, -21, 13, 7, -71, -32, -92, 32, -34, -8];
+    var sortedArray = [-97, -93, -92, -91, -90, -85, -78, -74, -73, -71, -68, -54, -34, -32, -31, -30, -27, -21, -20, -11, -10, -8, -6, 4, 7, 13, 17, 20, 27, 31, 32, 35, 44, 52, 55, 56, 58, 61, 68, 70, 73, 78, 88, 93, 93, 94, 94, 96, 97, 98];
     it('should sort an array', function () {
-      assert.deepEqual(selectionSort([1, 4, 2, 3]), [1, 2, 3, 4]);
-      assert.ok(util.isSorted(selectionSort([1, 4, 2, 3])));
+      assert.deepEqual(selectionSort(unsortedArray), sortedArray);
+      assert.ok(util.isSorted(selectionSort(unsortedArray)));
     });
     it('should sort an array that was already sorted', function () {
-      assert.deepEqual(selectionSort([1, 3, 4]), [1, 3, 4]);
-      assert.ok(util.isSorted(selectionSort([1, 3, 4])));
+      assert.deepEqual(selectionSort(sortedArray), sortedArray);
+      assert.ok(util.isSorted(selectionSort(sortedArray)));
     });
   });
 });
 describe('Utility Functions', function () {
   describe('isSorted Function', function () {
+    var unsortedArray = [56, 93, -11, 31, -20, -30, -90, 94, 93, 98, -93, 61, 97, -85, -54, -68, 4, 94, -10, 20, -6, 78, -31, -73, 88, 55, 44, -78, -27, -97, 27, 35, -91, 73, 96, 17, -74, 58, 52, 70, 68, -21, 13, 7, -71, -32, -92, 32, -34, -8];
+    var sortedArray = [-97, -93, -92, -91, -90, -85, -78, -74, -73, -71, -68, -54, -34, -32, -31, -30, -27, -21, -20, -11, -10, -8, -6, 4, 7, 13, 17, 20, 27, 31, 32, 35, 44, 52, 55, 56, 58, 61, 68, 70, 73, 78, 88, 93, 93, 94, 94, 96, 97, 98];
     it('should check if arrays are sorted', function () {
-      assert.equal(util.isSorted([1, 2, 2, 3]), true);
+      assert.equal(util.isSorted(sortedArray), true);
       assert.equal(util.isSorted([-5, 102, 30000.1, 50102]), true);
     });
     it('should check if unsorted arrays are unsorted', function () {
-      assert.equal(util.isSorted([1, 4, 2, 3]), false);
+      assert.equal(util.isSorted(unsortedArray), false);
       assert.equal(util.isSorted([-5, 102, 30000.1, -100000, 50102]), false);
     });
     it('should return length 1 arrays as sorted', function () {
