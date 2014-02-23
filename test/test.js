@@ -280,64 +280,33 @@ describe('Basic Data Structures', function () {
 describe('Elementary Sorts', function () {
   describe('Selection Sort', function () {
     // @todo Add several generic sorting tests which can be reused
-    it('should sort a numerical array', function () {
+    it('should sort an array', function () {
       assert.deepEqual(selectionSort([1, 4, 2, 3]), [1, 2, 3, 4]);
       assert.ok(util.isSorted(selectionSort([1, 4, 2, 3])));
     });
-    it('should sort a numerical array that was already sorted', function () {
+    it('should sort an array that was already sorted', function () {
       assert.deepEqual(selectionSort([1, 3, 4]), [1, 3, 4]);
       assert.ok(util.isSorted(selectionSort([1, 3, 4])));
-    });
-    it('should sort object arrays by key', function () {
-      assert.deepEqual(selectionSort([
-        {name: 'Susan', age: 36},
-        {name: 'Joe', age: 25},
-        {name: 'John', age: 19}
-      ], 'age'), [
-        {name: 'John', age: 19},
-        {name: 'Joe', age: 25},
-        {name: 'Susan', age: 36}
-      ]);
-      assert.ok(util.isSorted(selectionSort([
-        {name: 'Susan', age: 36},
-        {name: 'Joe', age: 25},
-        {name: 'John', age: 19}
-      ], 'age'), 'age'));
     });
   });
 });
 describe('Utility Functions', function () {
   describe('isSorted Function', function () {
-    it('should check if numerical arrays are sorted', function () {
+    it('should check if arrays are sorted', function () {
       assert.equal(util.isSorted([1, 2, 2, 3]), true);
       assert.equal(util.isSorted([-5, 102, 30000.1, 50102]), true);
     });
-    it('should check if unsorted numerical arrays are unsorted', function () {
+    it('should check if unsorted arrays are unsorted', function () {
       assert.equal(util.isSorted([1, 4, 2, 3]), false);
       assert.equal(util.isSorted([-5, 102, 30000.1, -100000, 50102]), false);
     });
-    it('should return single number arrays as sorted', function () {
+    it('should return length 1 arrays as sorted', function () {
       assert.equal(util.isSorted([1]), true);
       assert.equal(util.isSorted([0]), true);
     });
-    it('should check if object arrays are sorted by key', function () {
-      assert.equal(util.isSorted([
-        {name: 'John', age: 19},
-        {name: 'Joe', age: 25},
-        {name: 'Susan', age: 36}
-      ], 'age'), true);
-      assert.equal(util.isSorted([
-        {name: 'John', age: 19},
-        {name: 'Joe', age: 25},
-        {name: 'Susan', age: 36}
-      ], 'name'), false);
-      assert.equal(util.isSorted([
-        {name: 'Mary', age: 22}
-      ], 'age'), true);
-    });
   });
   describe('swap Function', function () {
-    it('should swap two items in an arry', function () {
+    it('should swap two items in an array', function () {
       var originalArray = [0, 1, 2, 3];
       // Swap the '3' value with the '2' value
       assert.deepEqual(util.swap(originalArray, 3, 2), [0, 1, 3, 2]);
