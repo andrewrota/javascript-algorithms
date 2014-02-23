@@ -6,7 +6,7 @@
  * @constructor
  */
 
-module.exports = function() {
+module.exports = function () {
 
   /**
    * The array of items in the stack
@@ -16,7 +16,7 @@ module.exports = function() {
    * @type {Array}
    */
 
-   var _items = [];
+  var _items = [];
 
   /**
    * Adds an item to the stack
@@ -24,7 +24,7 @@ module.exports = function() {
    * @method push
    * @param {Object} item Adds an item to the stack
    */
-  var push = function(item) {
+  var push = function (item) {
     _items.push(item);
   };
 
@@ -35,9 +35,9 @@ module.exports = function() {
    * @param {Object} item Removes an item from the stack
    * @return {Object} item Returns the item in LIFO order
    */
-  var pop = function() {
-    var lastItem = _items[_items.length-1];
-    _items.splice(_items.length-1, 1);
+  var pop = function () {
+    var lastItem = _items[_items.length - 1];
+    _items.splice(_items.length - 1, 1);
     return lastItem;
   };
 
@@ -47,7 +47,7 @@ module.exports = function() {
    * @method isEmpty
    * @return {Boolean} Returns true if the stack is empty
    */
-  var isEmpty = function() {
+  var isEmpty = function () {
     return !_items.length;
   };
 
@@ -57,7 +57,7 @@ module.exports = function() {
    * @method size
    * @return {Number} Returns number of items in the stack
    */
-  var size = function() {
+  var size = function () {
     return _items.length;
   };
 

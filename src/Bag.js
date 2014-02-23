@@ -5,8 +5,8 @@
  * @constructor
  */
 
-module.exports = function() {
-  
+module.exports = function () {
+
   /**
    * The array of items in the bag
    *
@@ -15,7 +15,7 @@ module.exports = function() {
    * @type {Array}
    */
 
-   var _items = [];
+  var _items = [];
 
   /**
    * Adds an item to the bag
@@ -23,8 +23,8 @@ module.exports = function() {
    * @method add
    * @param {Object} item Adds an item to the bag
    */
-  var add = function(item) {
-      _items.push(item);
+  var add = function (item) {
+    _items.push(item);
   };
 
   /**
@@ -33,8 +33,8 @@ module.exports = function() {
    * @method isEmpty
    * @return {Boolean} Returns true if the bag is empty
    */
-  var isEmpty = function() {
-      return !_items.length;
+  var isEmpty = function () {
+    return !_items.length;
   };
 
   /**
@@ -43,8 +43,8 @@ module.exports = function() {
    * @method size
    * @return {Number} Returns number of items in the bag
    */
-  var size = function() {
-      return _items.length;
+  var size = function () {
+    return _items.length;
   };
 
   return {

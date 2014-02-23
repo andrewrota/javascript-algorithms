@@ -14,21 +14,21 @@ var util = require('../src/util');
  * @return {Array} Returns the sorted array
  */
 module.exports = function (arr, key) {
-    var length = arr.length;
-    for (var i = 0; i < length; i++) {
-        var smallest = i;
-        for (var j = i + 1; j < length; j++) {
-            if (key) {
-                if (arr[j][key] < arr[smallest][key]) {
-                    smallest = j;
-                }
-            } else {
-                if (arr[j] < arr[smallest]) {
-                    smallest = j;
-                }
-            }
+  var length = arr.length;
+  for (var i = 0; i < length; i++) {
+    var smallest = i;
+    for (var j = i + 1; j < length; j++) {
+      if (key) {
+        if (arr[j][key] < arr[smallest][key]) {
+          smallest = j;
         }
-        arr = util.swap(arr, i, smallest);
+      } else {
+        if (arr[j] < arr[smallest]) {
+          smallest = j;
+        }
+      }
     }
-    return arr;
+    arr = util.swap(arr, i, smallest);
+  }
+  return arr;
 };

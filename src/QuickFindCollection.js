@@ -5,7 +5,7 @@
  * @class QuickFind
  * @constructor
  */
-module.exports = function(count) {
+module.exports = function (count) {
 
   /**
    * The array of ids is populated with consecutive integers
@@ -16,7 +16,7 @@ module.exports = function(count) {
    * @type {Array}
    */
   var _ids = [];
-  for(var i = 0; i<count; i++) {
+  for (var i = 0; i < count; i++) {
     _ids.push(i);
   }
 
@@ -27,15 +27,15 @@ module.exports = function(count) {
    * @param {Int} p First item to join
    * @param {Int} q Second item to join
    */
-  var union = function(p, q) {
-    if(connected(p, q)) {
+  var union = function (p, q) {
+    if (connected(p, q)) {
       return;
     }
     var pId = _ids[p];
     var qId = _ids[q];
     var i = _ids.length;
-    while(i) {
-      if(_ids[i] === pId) {
+    while (i) {
+      if (_ids[i] === pId) {
         _ids[i] = qId;
       }
       i--;
@@ -50,7 +50,7 @@ module.exports = function(count) {
    * @param {Int} q Second item to join
    * @return {Boolean} connected Returns true if the two items are connected
    */
-  var connected = function(p, q) {
+  var connected = function (p, q) {
     return _ids[p] === _ids[q];
   };
 

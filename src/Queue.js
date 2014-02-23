@@ -6,8 +6,8 @@
  * @constructor
  */
 
-module.exports = function() {
-  
+module.exports = function () {
+
   /**
    * The array of items in the queue
    *
@@ -16,7 +16,7 @@ module.exports = function() {
    * @type {Array}
    */
 
-   var _items = [];
+  var _items = [];
 
   /**
    * Adds an item to the queue
@@ -24,7 +24,7 @@ module.exports = function() {
    * @method enqueue
    * @param {Object} item Adds an item to the queue
    */
-  var enqueue = function(item) {
+  var enqueue = function (item) {
     _items.push(item);
   };
 
@@ -34,7 +34,7 @@ module.exports = function() {
    * @method dequeue
    * @return {Object} item Returns the item in FIFO order
    */
-  var dequeue = function() {
+  var dequeue = function () {
     var dequeuedItem = _items[0];
     _items.splice(0, 1);
     return dequeuedItem;
@@ -46,8 +46,8 @@ module.exports = function() {
    * @method isEmpty
    * @return {Boolean} Returns true if the queue is empty
    */
-  var isEmpty = function() {
-      return !_items.length;
+  var isEmpty = function () {
+    return !_items.length;
   };
 
   /**
@@ -56,7 +56,7 @@ module.exports = function() {
    * @method size
    * @return {Number} Returns number of items in the queue
    */
-  var size = function() {
+  var size = function () {
     return _items.length;
   };
 
