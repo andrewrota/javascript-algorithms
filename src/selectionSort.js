@@ -5,6 +5,9 @@ var util = require('../src/util');
  * It iterates through the array and each time finds the smallest
  * item and switches it with the first item.
  *
+ * Time does not depend on the initial order
+ * of the items in the array
+ *
  * @class selectionSort
  * @param {Array} arr The array to sort
  * @param {String} key The key to sort by values in objects in the array
