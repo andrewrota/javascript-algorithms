@@ -11,7 +11,6 @@ var util = require('../src/util');
  * @return {Array} Returns the sorted array
  */
 module.exports = function (arr, key) {
-    var sortedArray = [];
     var length = arr.length;
     for(var i = 0; i < length; i++) {
         var smallest  = i;
