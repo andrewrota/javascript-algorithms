@@ -6,6 +6,7 @@ var Queue = require('../src/Queue');
 var Stack = require('../src/Stack');
 var util = require('../src/util');
 var selectionSort = require('../src/selectionSort');
+var insertionSort = require('../src/insertionSort');
 
 describe('Dynamic Connectivity', function () {
   describe('Quickfind', function () {
@@ -288,6 +289,16 @@ describe('Elementary Sorts', function () {
     it('should sort an array that was already sorted', function () {
       assert.deepEqual(selectionSort(sortedArray), sortedArray);
       assert.ok(util.isSorted(selectionSort(sortedArray)));
+    });
+  });
+    describe('Insertion Sort', function () {
+    it('should sort an array', function () {
+      assert.deepEqual(insertionSort(unsortedArray), sortedArray);
+      assert.ok(util.isSorted(insertionSort(unsortedArray)));
+    });
+    it('should sort an array that was already sorted', function () {
+      assert.deepEqual(insertionSort(sortedArray), sortedArray);
+      assert.ok(util.isSorted(insertionSort(sortedArray)));
     });
   });
 });
