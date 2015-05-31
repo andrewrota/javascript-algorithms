@@ -7,6 +7,7 @@ var Stack = require('../src/Stack');
 var util = require('../src/util');
 var selectionSort = require('../src/selectionSort');
 var insertionSort = require('../src/insertionSort');
+var mergeSort = require('../src/mergeSort');
 
 describe('Dynamic Connectivity', function () {
   describe('Quickfind', function () {
@@ -299,6 +300,20 @@ describe('Elementary Sorts', function () {
     it('should sort an array that was already sorted', function () {
       assert.deepEqual(insertionSort(sortedArray), sortedArray);
       assert.ok(util.isSorted(insertionSort(sortedArray)));
+    });
+  });
+});
+describe('Merge Sorts', function () {
+  var unsortedArray = [56, 93, -11, 31, -20, -30, -90, 94, 93, 98, -93, 61, 97, -85, -54, -68, 4, 94, -10, 20, -6, 78, -31, -73, 88, 55, 44, -78, -27, -97, 27, 35, -91, 73, 96, 17, -74, 58, 52, 70, 68, -21, 13, 7, -71, -32, -92, 32, -34, -8];
+  var sortedArray = [-97, -93, -92, -91, -90, -85, -78, -74, -73, -71, -68, -54, -34, -32, -31, -30, -27, -21, -20, -11, -10, -8, -6, 4, 7, 13, 17, 20, 27, 31, 32, 35, 44, 52, 55, 56, 58, 61, 68, 70, 73, 78, 88, 93, 93, 94, 94, 96, 97, 98];
+  describe('Merge Sort', function () {
+    it('should sort an array', function () {
+      assert.deepEqual(mergeSort(unsortedArray), sortedArray);
+      assert.ok(util.isSorted(mergeSort(unsortedArray)));
+    });
+    it('should sort an array that was already sorted', function () {
+      assert.deepEqual(mergeSort(sortedArray), sortedArray);
+      assert.ok(util.isSorted(mergeSort(sortedArray)));
     });
   });
 });
